@@ -15,4 +15,7 @@ get_strand(
 \description{
 Tries to define correct strand of the position via counting reads aligned to both strands
 }
+\author{
+Irina Shchyukina
+}
 \keyword{internal}

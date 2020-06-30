@@ -47,3 +47,6 @@ On \code{strand_specific == TRUE} the list of three data frames (with names \cod
 \description{
 Separates data from the input BAM file into a number of data frames, each suitable for the further RNA editing analysis
 }
+\author{
+Irina Shchyukina
+}

@@ -341,6 +341,10 @@ fixed_chromosome_positions <- function(
 #' @importFrom Rsamtools BamFile FaFile PileupParam indexBam
 #'
 #' @export
+#'
+#' @example
+#' bamrd
+#'
 bamrd <- function(
     bam_file_name,
     reference_fasta,

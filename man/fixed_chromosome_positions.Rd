@@ -18,4 +18,7 @@ fixed_chromosome_positions(
 \description{
 Actually get info from bam for given chromosome
 }
+\author{
+Irina Shchyukina
+}
 \keyword{internal}
