@@ -1,6 +1,6 @@
 Package: rnaedt
 Type: Package
-Title: Estimation of the RNA editing probability
+Title: Estimation of the RNA Editing Probability
 Version: 0.1.0
 Author: Olga Dudkina
 Maintainer: Alexey Antonik <alexey.antonik@gmail.com>
