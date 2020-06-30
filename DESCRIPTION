@@ -1,0 +1,23 @@
+Package: rnaedt
+Type: Package
+Title: Estimation of the RNA editing probability
+Version: 0.1.0
+Author: Olga Dudkina
+Maintainer: Alexey Antonik <alexey.antonik@gmail.com>
+Description: Estimation of the RNA editing probability via advanced beta distribution model, and other useful tools for RNA data processing.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+biocViews:
+Imports:
+    lubridate,
+    GenomicRanges,
+    GenomeInfoDb,
+    IRanges,
+    Rsamtools,
+    dplyr,
+    magrittr,
+    pryr,
+    rlang,
+    tidyr
+RoxygenNote: 7.1.1
