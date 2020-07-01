@@ -19,5 +19,9 @@ Imports:
     magrittr,
     pryr,
     rlang,
-    tidyr
+    tidyr,
+    stats,
+    parallel,
+    MASS,
+    stats4
 RoxygenNote: 7.1.1
