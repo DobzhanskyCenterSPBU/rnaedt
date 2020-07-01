@@ -148,7 +148,7 @@ J_in <- function(i, t, a_edt, b_edt, a_0, b_0, edt_coverage, edt_ref_count, edt_
 #' @export
 #'
 #' @example
-#' bamrd
+#' rnaedt
 #'
 rnaedt <- function(input, strand_specific = TRUE, threads = 20) {
     all_sites <- input$pileup_table

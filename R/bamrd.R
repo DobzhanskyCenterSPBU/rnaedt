@@ -331,7 +331,7 @@ fixed_chromosome_positions <- function(
 #' @param min_nucleotide_depth An \code{integer(1)} minimum count of each nucleotide at a given position required for said nucleotide to appear in the result
 #' @param min_minor_allele_depth An \code{integer(1)} left undocumented
 #' @param min_coverage An \code{integer(1)} minimum coverage for position to be included in final dataset
-#' @param use_noncanonical A \code{logical(1)} indicating  whether to use (\code{TRUE}) all chromosomes from BAM including non-canonical ones'
+#' @param use_noncanonical A \code{logical(1)} indicating  whether to use (\code{TRUE}) all chromosomes from BAM including non-canonical ones
 #' @param strand_specific A \code{logical(1)} indicating the presence either of the strand-specific (\code{TRUE}) RNA-seq experiment, or non-strand-specific (\code{FALSE}) one
 #' @param single_end A \code{logical(1)} indicating the presence of the single-end (\code{TRUE}) RNA-seq experiment
 #'
