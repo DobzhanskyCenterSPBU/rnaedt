@@ -363,7 +363,7 @@ bamrd <- function(
 
     # check if index exists: create
     bam_index = paste0(bam_file_name, ".bai")
-    if (!file.exists(bam_index))
+    if (!file.exists(bam_index)) indexBam(bam_file_name)
 
     # check if reference genome exists: throw and stop
     if (!file.exists(reference_fasta)) { stop(paste0(reference_fasta, " -- reference FASTA does not exist")) }
