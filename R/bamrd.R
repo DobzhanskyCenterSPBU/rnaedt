@@ -334,7 +334,7 @@ fixed_chromosome_positions <- function(
 #' @param use_noncanonical A \code{logical(1)} indicating  whether to use (\code{TRUE}) all chromosomes from BAM including non-canonical ones
 #' @param strand_specific A \code{logical(1)} indicating the presence either of the strand-specific (\code{TRUE}) RNA-seq experiment, or non-strand-specific (\code{FALSE}) one
 #' @param single_end A \code{logical(1)} indicating the presence of the single-end (\code{TRUE}) RNA-seq experiment
-#'
+#'do
 #' @return On \code{strand_specific == TRUE} the list of three data frames (with names \code{pileup_table}, \code{messy_positions}, and \code{pairs}), otherwise the list of only one data frame (with name \code{pileup_table}) suitable for the further RNA editing analysis
 #'
 #' @importMethodsFrom GenomeInfoDb seqlengths
@@ -392,17 +392,17 @@ bamrd <- function(
     # prepare output data
 
     if (strand_specific) {
-        do.call(
+        Reduce(
             function(x, y) { list(
                 pileup_table = rbind(x$pileup_table, y$pileup_table),
                 messy_positions = rbind(x$messy_positions,y$messy_positions),
-                ambiguous_file = rbind(x$ambiguous_file,y$ambiguous_file)) },
+                pairs = rbind(x$pairs,y$pairs)) },
             lapply(
                 chromosome_names,
                 function(chr) fixed_chromosome_positions(
                     bam_file, chr, bam_index, pileup_params, fasta_file, min_coverage, strand_specific, single_end)))
     } else {
-        do.call(
+        Reduce(
             function(x, y) { list(pileup_table = rbind(x$pileup_table, y$pileup_table)) },
             lapply(
                 chromosome_names,
