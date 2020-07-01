@@ -213,7 +213,7 @@ fixed_chromosome_positions <- function(
             ((lead(.data$pos) == .data$pos) & lead(.data$is_mismatch)) |
             ((lag(.data$pos) == .data$pos) & lag(.data$is_mismatch))) %>%
         mutate(coverage = .data$A + .data$G + .data$T + .data$C) %>%
-        filter(.data$coverage > .data$min_coverage)
+        filter(.data$coverage > min_coverage)
     if (nrow(pileup_table) == 0) { return(NULL) }
     print(pryr::object_size(pileup_table))
     if (strand_specific) {
