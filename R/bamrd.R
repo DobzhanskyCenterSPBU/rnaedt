@@ -185,7 +185,7 @@ fixed_chromosome_positions <- function(
             .data$count)) %>%
         filter(!.data$is_next_same) %>%
         select(-.data$is_next_same)
-    print(pryr::object_size(pileup_table))
+    print(object_size(pileup_table))
     if (nrow(pileup_table) == 0) { return(NULL) }
     print(now())
 
@@ -195,13 +195,13 @@ fixed_chromosome_positions <- function(
     positions <- GRanges(pileup_table$seqnames, IRanges(start = pileup_table$pos, end = pileup_table$pos))
     reference_base <- getSeq(fasta_file, positions)
     pileup_table <- pileup_table %>% bind_cols(as.data.frame(reference_base)) %>% rename(reference = .data$x)
-    print(pryr::object_size(pileup_table))
+    print(object_size(pileup_table))
 
     # spread rows by position
     print("Spread rows by position")
     print(now())
     pileup_table <- pileup_table %>% spread(key = .data$nucleotide, value = .data$count, fill = 0)
-    print(pryr::object_size(pileup_table))
+    print(object_size(pileup_table))
 
     # calculate coverage, fraction and filter by coverage
     print("Leave only mismatches, filter by coverage")
@@ -215,7 +215,7 @@ fixed_chromosome_positions <- function(
         mutate(coverage = .data$A + .data$G + .data$T + .data$C) %>%
         filter(.data$coverage > min_coverage)
     if (nrow(pileup_table) == 0) { return(NULL) }
-    print(pryr::object_size(pileup_table))
+    print(object_size(pileup_table))
     if (strand_specific) {
         # choose strand
         print("Choose strand to use")
